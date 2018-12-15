@@ -1,6 +1,7 @@
 mod git;
 mod hg;
 mod util;
+mod pyenv;
 
 use std::collections::HashMap;
 use std::env;
@@ -152,6 +153,9 @@ fn format_full(status: &Status, variables: &HashMap<&str, String>) -> String {
         output.push_str(&variables.get("VCP_CLEAN").unwrap());
     }
     output.push_str(&variables.get("VCP_SUFFIX").unwrap());
+
+    let venv = pyenv::venv_str();
+    output.push_str(&venv);
 
     output
 }
