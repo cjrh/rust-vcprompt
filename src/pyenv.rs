@@ -11,7 +11,7 @@ pub fn venv_str() -> String {
             let venv_path = Path::new(&pth);
 
             // Shorten the path to the venv
-            let mut path_buffer = PathBuf::from(&pth);
+            let path_buffer = PathBuf::from(&pth);
             let mut parts = Vec::new();
             for p in path_buffer.components() {
                 parts.push(p
