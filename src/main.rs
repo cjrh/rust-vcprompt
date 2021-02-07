@@ -106,7 +106,7 @@ fn print_result(status: &Status, style: OutputStyle) {
     for (k, v) in colors.iter() {
         output = output.replace(k, v);
     }
-    println!("{}", output);
+    print!("{}", output);
 }
 
 /// Format *status* in detailed style
@@ -154,8 +154,8 @@ fn format_full(status: &Status, variables: &HashMap<&str, String>) -> String {
     }
     output.push_str(&variables.get("VCP_SUFFIX").unwrap());
 
-    let venv = pyenv::venv_str();
-    output.push_str(&venv);
+//    let venv = pyenv::venv_str();
+//    output.push_str(&venv);
 
     output
 }
@@ -220,4 +220,11 @@ fn main() {
 
     let (vcs, rootdir) = get_vcs();
     vcs.get_status(rootdir).map(|r| print_result(&r, style));
+
+    let venv = pyenv::venv_str();
+    print!("{}", venv);
+    println!("");
+//    output.push_str(&venv);
+//
+
 }
