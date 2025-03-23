@@ -2,7 +2,7 @@
 use std::path::PathBuf;
 use std::process::Command;
 
-use util::Status;
+use crate::util::Status;
 
 
 static OPERATIONS: [(&str, &str); 6] = [

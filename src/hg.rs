@@ -4,7 +4,7 @@ use std::path::PathBuf;
 use std::process::Command;
 use std::io::prelude::*;
 
-use util::Status;
+use crate::util::Status;
 
 
 /// Get the status for the cwd
