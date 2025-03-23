@@ -40,7 +40,7 @@ impl VCS {
 /// the most inner repository type.
 fn get_vcs() -> (VCS, Option<PathBuf>) {
     let vcs_files = [
-        (VCS::Git, ".git/HEAD"),
+        (VCS::Git, ".git"),
         (VCS::Hg, ".hg/00changelog.i"),
     ];
 
